@@ -54,25 +54,25 @@ const styles = StyleSheet.create({
         backgroundColor: 'white',
         padding: 15,
         elevation: 5,
-        shadowColor: 'black',
+        shadowColor: 'grey',
         shadowOffset: {
             width: 0,
             height: 1,
         },
         shadowOpacity: 0.25,
-        shadowRadius: 3
+        shadowRadius: 5,
     },
 
-    radioButton: {
+    radioBtn: {
         flexDirection: 'column',
-        alignContent: 'center'
+        alignItems: 'center'
     },
 
     radioLabel: {
         marginLeft: 5,
         fontSize: 15,
         color: 'black'
-    },
+    }
 })
 
 export default styles;
