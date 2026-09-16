@@ -8,6 +8,22 @@ function MainScreen(){
 
     const [petName, setPetName] = useState('');
     const [selectedValue, setSelectedValue] = useState('0');
+    const [pet, setPet] = useState<string[]>([]);
+
+    const renderPets = () => {
+        const arrDisplay = [];
+
+        for(let i=0; i < pet.length; i++){
+            arrDisplay.push(
+                <View key={i} style={styles.inputContainer}>
+                    <Text style={styles.petTxt}>
+                        {pet[i]}
+                    </Text>
+                </View>
+            );
+        }
+        return arrDisplay;
+    }
 
     return(
         <View>
@@ -73,6 +89,16 @@ function MainScreen(){
                                 {/* ------------------------------------------------------- */}
                             </View>
                         </View>
+                    </View>
+
+                    <Button title="Add Pet"
+                        onPress={() => {
+                            setPet([...pet, petName]);
+                            setPetName("");
+                        }}
+                    />
+                    <View style={styles.petContainer}>
+                        {renderPets()}
                     </View>
                 </ScrollView>
             </SafeAreaView>
